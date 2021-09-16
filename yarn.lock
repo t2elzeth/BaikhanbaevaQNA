@@ -1878,6 +1878,11 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
 
+"@types/lodash@^4.14.173":
+  version "4.14.173"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.173.tgz#9d3b674c67a26cf673756f6aca7b429f237f91ed"
+  integrity sha512-vv0CAYoaEjCw/mLy96GBTnRoZrSxkGE0BKzKimdR8P3OzrNYNvBgtW7p055A+E8C31vXNUhWKoFCbhq7gbyhFg==
+
 "@types/minimatch@*":
   version "3.0.5"
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.5.tgz#1001cc5e6a3704b83c236027e77f2f58ea010f40"
@@ -1912,6 +1917,28 @@
   version "1.5.5"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.5.tgz#75a2a8e7d8ab4b230414505d92335d1dcb53a6df"
   integrity sha512-L28j2FcJfSZOnL1WBjDYp2vUHCeIFlyYI/53EwD/rKUBQ7MtUUfbQWiyKJGpcnv4/WgrhWsFKrcPstcAt/J0tQ==
+
+"@types/react-bootstrap-table-next@*", "@types/react-bootstrap-table-next@^4.0.15":
+  version "4.0.15"
+  resolved "https://registry.yarnpkg.com/@types/react-bootstrap-table-next/-/react-bootstrap-table-next-4.0.15.tgz#8f011af46d16722fb70016be817d7dba21035698"
+  integrity sha512-VvhfXZof42smWxadZGvsnggC2CXkfaSjn/qtaiCApyUURAo3U9dJ/QU8WpIY4VzNHfEVstL5OPf0e4jA9lZqfg==
+  dependencies:
+    "@types/react" "*"
+
+"@types/react-bootstrap-table2-paginator@^2.1.2":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@types/react-bootstrap-table2-paginator/-/react-bootstrap-table2-paginator-2.1.2.tgz#bf40a045579c6b7ffce8a5b1120d892feb50c362"
+  integrity sha512-qAeUhtQ+wXKUC72emRBh1CQw+usGE/sXa1Xp0nEby7xZotpoJJ3iL3yAstRvYGn7TKlKuSTRRNtDEd6zP+XuqA==
+  dependencies:
+    "@types/react-bootstrap-table-next" "*"
+
+"@types/react-bootstrap-table2-toolkit@^2.1.5":
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/@types/react-bootstrap-table2-toolkit/-/react-bootstrap-table2-toolkit-2.1.5.tgz#f8ed14c1a50e37a6cecb3e121bca9f5e0b6bb983"
+  integrity sha512-3uH5jVGKlmmtgGydKW6ILCnNr6zNhEh7ibK12iSqf/JTpz4pjXw6jLkKqTd8vULELcRBHcK6Kxcz7mb+3YW6oA==
+  dependencies:
+    "@types/react" "*"
+    "@types/react-bootstrap-table-next" "*"
 
 "@types/react-dom@^17.0.9":
   version "17.0.9"

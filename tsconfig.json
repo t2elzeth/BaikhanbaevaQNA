@@ -3,6 +3,7 @@
     "target": "es5",
     "module": "esnext",
     "allowJs": true,
+    "noImplicitAny": false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
