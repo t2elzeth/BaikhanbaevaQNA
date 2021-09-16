@@ -1,22 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { Card, CardBody, NavItem, NavLink } from "reactstrap";
 import classnames from "classnames";
 
 import BootstrapTable from "react-bootstrap-table-next";
 import paginationFactory from "react-bootstrap-table2-paginator";
-import { useDispatch, useSelector } from "react-redux";
-import { getBalances } from "../../store/balance/actions";
 import columns from "./columns";
 
 const WalletActivities = ({ activeTab, toggleTab }) => {
-  const { balances } = useSelector(state => state.balance);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getBalances());
-  }, []);
-
   return (
     <Card>
       <CardBody>
@@ -61,7 +52,7 @@ const WalletActivities = ({ activeTab, toggleTab }) => {
         </ul>
 
         <div className="mt-4">
-          <BootstrapTable keyField="id" data={balances} columns={columns} pagination={paginationFactory()} />
+          <BootstrapTable keyField="id" data={[]} columns={columns} pagination={paginationFactory()} />
         </div>
       </CardBody>
     </Card>
