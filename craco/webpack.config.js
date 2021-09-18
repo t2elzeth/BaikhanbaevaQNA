@@ -5,7 +5,8 @@ const resolvePath = p => path.resolve(__dirname, p);
 module.exports = {
   resolve: {
     alias: {
-      "@": resolvePath("../src")
+      "@": resolvePath("../src"),
+      "@/*": resolvePath("../src/*"),
     }
   }
 };

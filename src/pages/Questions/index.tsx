@@ -1,6 +1,6 @@
 import React from "react";
 
-const Questions = () => {
+const Questions = (): React.ReactElement => {
   return (
     <div>
       <h1>Questions list</h1>

@@ -1,9 +1,11 @@
 {
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module",
@@ -28,7 +30,21 @@
     "semi": [
       "error",
       "always"
-//      "never"
-    ]
+      //      "never"
+    ],
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/no-var-requires": 0
   }
+//  "overrides": [
+//    {
+//      // enable the rule specifically for TypeScript files
+//      "files": [
+//        "*.ts",
+//        "*.tsx"
+//      ],
+//      "rules": {
+//        "@typescript-eslint/explicit-function-return-type": "off"
+//      }
+//    }
+//  ]
 }

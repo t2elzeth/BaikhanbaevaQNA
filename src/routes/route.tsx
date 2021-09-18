@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { Redirect, Route } from "react-router-dom";
 // import {Location} from "history";
 
@@ -17,10 +17,10 @@ const Authmiddleware = ({
   layout: Layout,
   isAuthProtected,
   ...rest
-}: any) => (
+}: any): ReactElement => (
   <Route
     {...rest}
-    render={props => {
+    render={(props): ReactElement => {
       if (isAuthProtected && !localStorage.getItem("authUser")) {
         return (
           <Redirect
