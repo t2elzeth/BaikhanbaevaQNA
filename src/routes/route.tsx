@@ -1,13 +1,23 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Redirect, Route } from "react-router-dom";
+// import {Location} from "history";
+
+// interface AuthmiddlewareProps {
+//   component: React.ComponentType,
+//
+//   // Add layout type
+//   layout: any,
+//
+//   location: Location,
+//   isAuthProtected: boolean,
+// }
 
 const Authmiddleware = ({
   component: Component,
   layout: Layout,
   isAuthProtected,
   ...rest
-}) => (
+}: any) => (
   <Route
     {...rest}
     render={props => {
@@ -28,11 +38,6 @@ const Authmiddleware = ({
   />
 );
 
-Authmiddleware.propTypes = {
-  isAuthProtected: PropTypes.bool,
-  component: PropTypes.any,
-  location: PropTypes.object,
-  layout: PropTypes.any,
-};
+
 
 export default Authmiddleware;
