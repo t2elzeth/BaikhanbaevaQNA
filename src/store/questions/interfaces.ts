@@ -1,5 +1,5 @@
 import { ActionTypesEnum } from "./actionTypes";
-import { ICreateQuestionModel, IQuestionModel } from "../../models/questions";
+import { ICreateQuestionModel, IQuestionModel } from "models/questions";
 
 
 export interface ICreateQuestionAction {
@@ -10,6 +10,15 @@ export interface ICreateQuestionAction {
 export interface IReceiveCreatedQuestionAction {
   type: ActionTypesEnum.RECEIVE_CREATED_QUESTION,
   payload: IQuestionModel
+}
+
+export interface IRequestQuestionsList {
+  type: ActionTypesEnum.REQUEST_QUESTIONS_LIST
+}
+
+export interface IReceiveQuestionsList {
+  type: ActionTypesEnum.RECEIVE_QUESTIONS_LIST,
+  payload: IQuestionModel[]
 }
 
 export interface IInitialState {

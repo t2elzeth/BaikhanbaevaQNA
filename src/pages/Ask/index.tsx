@@ -1,106 +1,118 @@
 import React, { ReactElement, useState } from "react";
 import MetaTags from "react-meta-tags";
 
-import { Button, Card, CardBody, CardTitle, Col, Container, Form, Row } from "reactstrap";
+import { Card, CardBody, Col, Container, Form, Input, Label, Row } from "reactstrap";
 import Breadcrumbs from "components/Common/Breadcrumb";
 import { createQuestion } from "store/questions/actions";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 const Ask = (): ReactElement => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const [user, setUser] = useState<string>("");
-  const [title, setTitle] = useState<string>("");
+  const [question, setQuestion] = useState<string>("");
   const [description, setDescription] = useState<string>("");
 
   const handleUserInput = (e: React.ChangeEvent<HTMLInputElement>) => setUser(e.target.value);
-  const handleTitleInput = (e: React.ChangeEvent<HTMLInputElement>) => setTitle(e.target.value);
+  const handleTitleInput = (e: React.ChangeEvent<HTMLInputElement>) => setQuestion(e.target.value);
   const handleDescriptionInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => setDescription(e.target.value);
 
   function submitData(e: React.FormEvent) {
     e.preventDefault();
-    dispatch(createQuestion({ user, title, description }));
+    dispatch(createQuestion({ user, question, description }));
+    
+    history.push("/questions");
   }
 
   return (
     <React.Fragment>
       <div className="page-content">
         <MetaTags>
-          <title>Ask a question</title>
+          <title>Notarius</title>
         </MetaTags>
         <Container fluid>
-          <Breadcrumbs title="Questions" breadcrumbItem="Ask" />
-
+          <Breadcrumbs title="Notarius" breadcrumbItem="Q&A" />
           <Row>
-            <Col>
+            <Col lg={12}>
               <Card>
                 <CardBody>
-                  <CardTitle className="h4">Ask a question</CardTitle>
-                  <p className="card-title-desc">
-                    Fill the following fields to submit a new question
-                  </p>
+                  <div className="pt-3">
+                    <div className="row justify-content-center">
+                      <div className="col-xl-8">
+                        <div>
+                          <div className="mt-4">
+                            <div className="mt-4">
+                              <h5 className="font-size-16 mb-3">Leave a Question</h5>
 
-                  <Form onSubmit={submitData}>
-                    <Row className="mb-3 mt-3">
-                      <label
-                        htmlFor="example-text-input"
-                        className="col-md-2 col-form-label"
-                      >
-                        Full name
-                      </label>
-                      <div className="col-md-10">
-                        <input
-                          className="form-control"
-                          type="text"
-                          name="user"
-                          placeholder="John Doe"
-                          onInput={handleUserInput}
-                        />
-                      </div>
-                    </Row>
+                              <Form onSubmit={submitData}>
+                                <Row>
+                                  <Col md={6}>
+                                    <div className="mb-3">
+                                      <Label htmlFor="commentname-input">
+                                        Full name
+                                      </Label>
+                                      <Input
+                                        type="text"
+                                        className="form-control"
+                                        id="commentname-input"
+                                        placeholder="Enter name"
+                                        onInput={handleUserInput}
+                                      />
+                                    </div>
+                                  </Col>
+                                  <Col md={6}>
+                                    <div className="mb-3">
+                                      <Label htmlFor="commentemail-input">
+                                        Question title
+                                      </Label>
+                                      <input
+                                        type="text"
+                                        className="form-control"
+                                        id="commentemail-input"
+                                        placeholder="It's related to..."
+                                        onInput={handleTitleInput}
+                                      />
+                                    </div>
+                                  </Col>
+                                </Row>
 
-                    <Row className="mb-3 mt-3">
-                      <label
-                        htmlFor="example-text-input"
-                        className="col-md-2 col-form-label"
-                      >
-                        Question title
-                      </label>
-                      <div className="col-md-10">
-                        <input
-                          className="form-control"
-                          type="text"
-                          name="title"
-                          placeholder="I don't know what to ask"
-                          onInput={handleTitleInput}
-                        />
-                      </div>
-                    </Row>
+                                <div className="mb-3">
+                                  <Label htmlFor="commentmessage-input">
+                                    Question body
+                                  </Label>
+                                  <textarea
+                                    className="form-control"
+                                    id="commentmessage-input"
+                                    placeholder="Your question is..."
+                                    rows={3}
+                                    onInput={handleDescriptionInput}
+                                  />
+                                </div>
 
-                    <Row className="mb-3 mt-3">
-                      <label
-                        htmlFor="example-text-input"
-                        className="col-md-2 col-form-label"
-                      >
-                        Question body
-                      </label>
-                      <div className="col-md-10">
-                      <textarea
-                        className="form-control"
-                        placeholder="Write deeper explanation of the issue"
-                        name="description"
-                        onInput={handleDescriptionInput}
-                      />
+                                <div className="text-end">
+                                  <button
+                                    type="submit"
+                                    className="btn btn-danger w-sm"
+                                    onClick={history.goBack}
+                                  >
+                                    Go back
+                                  </button>
+                                  <button
+                                    type="submit"
+                                    className="btn btn-success w-sm mx-lg-2"
+                                  >
+                                    Submit
+                                  </button>
+                                </div>
+                              </Form>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                    </Row>
-                    <Row>
-                      <Col xl={8}>
-                        <Button type="submit" color="primary" className="float-right">
-                          Submit
-                        </Button>
-                      </Col>
-                    </Row>
-                  </Form>
+                    </div>
+                  </div>
                 </CardBody>
               </Card>
             </Col>
