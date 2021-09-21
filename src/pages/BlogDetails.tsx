@@ -11,6 +11,7 @@ import { useDispatch } from "react-redux";
 import { requestQuestionsList } from "store/questions/actions";
 import useTypedSelector from "hooks/useTypedSelector";
 import { useHistory } from "react-router-dom";
+import moment from "moment";
 
 const BlogDetails = (): React.ReactElement => {
   const state = useTypedSelector(state => state.questions);
@@ -20,8 +21,6 @@ const BlogDetails = (): React.ReactElement => {
 
   useEffect(() => {
     dispatch(requestQuestionsList());
-
-    console.log(new Date("2021-09-21T15:40:23.542959+06:00"));
   }, []);
 
   function handleRedirectToAsk() {

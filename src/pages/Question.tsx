@@ -3,6 +3,7 @@ import { FULL_NAME } from "constants/info";
 import { Collapse } from "reactstrap";
 import classNames from "classnames";
 import { IAnswerModel } from "models/questions";
+import moment from "moment";
 
 interface IAnswerProps {
   answer: string
@@ -40,7 +41,8 @@ interface IQuestionProps {
   user: string,
   question: string,
   description: string,
-  answers?: IAnswerModel
+  date_added: string,
+  answers?: IAnswerModel,
 }
 
 
@@ -48,6 +50,7 @@ const Question = ({
                     user: fullName,
                     question: title,
                     description,
+                    date_added,
                     answers: answer
                   }: IQuestionProps): React.ReactElement => {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,7 +72,7 @@ const Question = ({
         <h5 className="font-size-14 mb-1">
           {fullName}
           <small className="text-muted float-end">
-            1 hr Ago
+            {moment(date_added).fromNow()}
           </small>
         </h5>
         <div className="mt-2">
