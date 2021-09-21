@@ -11,7 +11,6 @@ import { useDispatch } from "react-redux";
 import { requestQuestionsList } from "store/questions/actions";
 import useTypedSelector from "hooks/useTypedSelector";
 import { useHistory } from "react-router-dom";
-import moment from "moment";
 
 const BlogDetails = (): React.ReactElement => {
   const state = useTypedSelector(state => state.questions);
