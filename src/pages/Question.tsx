@@ -102,7 +102,10 @@ const Question = ({
             </>
             :
             <>
-              <p className="text-danger">Not answered yet</p>
+              <p className="text-danger">
+                <i className="mdi mdi-close"/>
+                Not answered yet
+              </p>
             </>
         }
       </div>
