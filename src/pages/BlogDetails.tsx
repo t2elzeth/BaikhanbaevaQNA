@@ -20,6 +20,8 @@ const BlogDetails = (): React.ReactElement => {
 
   useEffect(() => {
     dispatch(requestQuestionsList());
+
+    console.log(new Date("2021-09-21T15:40:23.542959+06:00"));
   }, []);
 
   function handleRedirectToAsk() {

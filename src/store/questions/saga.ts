@@ -9,7 +9,6 @@ import { ICreateQuestionAction } from "store/questions/interfaces";
 export function* createQuestionWorker(action: ICreateQuestionAction) {
   try {
     const response: AxiosResponse<IQuestionModel> = yield call(axios.post, "http://localhost:8000/questions/", action.payload);
-    console.log("Worker is working");
     yield put(receiveCreatedQuestion(response.data));
   } catch (e: any) {
     console.log(e.response);
@@ -22,7 +21,6 @@ export function* requestQuestionWorker() {
       axios.get,
       "http://localhost:8000/questions/"
     );
-    console.log(response.data);
     yield put(receiveQuestionsList(response.data));
   } catch (e: any) {
     console.log(e.response);
