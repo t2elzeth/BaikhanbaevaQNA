@@ -1,24 +1,18 @@
 import Redirect from "./Redirect";
-import Login from "../pages/Authentication/Login";
-import Dashboard from "../pages/Dashboard/index";
 
 import RouteNames from "./routeNames";
 import IRoute from "./interfaces";
 // import Questions from "../pages/Questions";
-import QuestionDetail from "../pages/Questions/QuestionDetail";
-import Ask from "../pages/Ask";
+import Ask from "pages/Ask";
 // import Questions from "pages/Questions";
-import BlogDetails from "pages/BlogDetails";
+import QuestionsList from "pages/questions/QuestionsList";
 
 const authProtectedRoutes: IRoute[] = [
-  { path: RouteNames.DASHBOARD, component: Dashboard },
   { path: RouteNames.ROOT, exact: true, component: Redirect},
 ];
 
 const publicRoutes: IRoute[] = [
-  { path: RouteNames.LOGIN, component: Login },
-  { path: RouteNames.QUESTIONS_LIST, component: BlogDetails },
-  { path: RouteNames.QUESTION_DETAIL, component: QuestionDetail },
+  { path: RouteNames.QUESTIONS_LIST, component: QuestionsList },
   { path: RouteNames.ASK, component: Ask },
 ];
 

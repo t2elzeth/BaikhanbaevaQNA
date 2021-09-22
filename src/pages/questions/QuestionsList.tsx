@@ -2,17 +2,15 @@ import React, { useEffect } from "react";
 import MetaTags from "react-meta-tags";
 import { Card, CardBody, Col, Container, Row } from "reactstrap";
 
-//Import Breadcrumb
 import Breadcrumbs from "components/Common/Breadcrumb";
 
-// import images
-import Question from "pages/Question";
+import Question from "pages/questions/Question";
 import { useDispatch } from "react-redux";
 import { requestQuestionsList } from "store/questions/actions";
 import useTypedSelector from "hooks/useTypedSelector";
 import { useHistory } from "react-router-dom";
 
-const BlogDetails = (): React.ReactElement => {
+const QuestionsList = (): React.ReactElement => {
   const state = useTypedSelector(state => state.questions);
 
   const dispatch = useDispatch();
@@ -82,4 +80,4 @@ const BlogDetails = (): React.ReactElement => {
   );
 };
 
-export default BlogDetails;
+export default QuestionsList;

@@ -1,16 +1,5 @@
 import React, { ReactElement } from "react";
 import { Redirect, Route } from "react-router-dom";
-// import {Location} from "history";
-
-// interface AuthmiddlewareProps {
-//   component: React.ComponentType,
-//
-//   // Add layout type
-//   layout: any,
-//
-//   location: Location,
-//   isAuthProtected: boolean,
-// }
 
 const Authmiddleware = ({
   component: Component,
@@ -37,7 +26,5 @@ const Authmiddleware = ({
     }}
   />
 );
-
-
 
 export default Authmiddleware;
